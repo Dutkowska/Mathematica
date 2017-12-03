@@ -1,0 +1,36 @@
+trapez(0,1,10,inline('x.^2+12'))
+
+function[]=trapez(a,b,n,f)
+h=(b-a)/n;
+k=f(a)/2;
+x=0;
+for i=1:(n-1)
+    x=x+a+i*h;
+    k=k+f(x);
+    x=0;
+end
+k=k+f(b)/2;
+h*k
+
+______________________________________________________
+
+
+b³¹d: n8iedokoñczone
+
+function[]=trapezbl(arg,a,b,n)
+y=polyval(poly(arg),arg)
+yp=polydar(y)
+ypp=polydar(yp)
+
+be=abs(ypp);
+
+
+
+
+wa=be(a);
+wb=be(b);
+if wb>wa
+    wb=max;
+else
+    wa=max;
+end

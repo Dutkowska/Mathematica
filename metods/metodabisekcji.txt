@@ -1,0 +1,22 @@
+function[c,i]= bis(a,b,f,d)
+c=(a+b)/2;
+i=1;
+if f(c)==0
+    c;
+else
+    while abs(f(c)) >= d
+        if f(a)*f(c)<0
+            b=c;
+            c=(a+b)/2;
+            i=i+1;
+        elseif f(c)*f(b)<0
+            a=c;
+            c=(a+b)/2;
+            i=i+1;
+        end
+    end
+end
+
+
+
+metod¹ bisekcji

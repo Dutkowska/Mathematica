@@ -1,0 +1,290 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10568,        281]
+NotebookOptionsPosition[     10228,        265]
+NotebookOutlinePosition[     10667,        283]
+CellTagsIndexPosition[     10624,        280]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{"\"\<PARAMETRY\>\"", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"to", "=", " ", 
+   RowBox[{"-", "100"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tk", "=", " ", "100"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", "4"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eta", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"t", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"w", "=", 
+   RowBox[{"2", "*", 
+    RowBox[{"Pi", "/", 
+     RowBox[{"(", 
+      RowBox[{"tk", "-", "to"}], ")"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"k", 
+  ";"}], "\[IndentingNewLine]", "\"\<FUNKCJA ZESPOLONA\>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"z", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"tk", "-", "to"}], ")"}]}], "*", 
+    RowBox[{"E", "^", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "I"}], "*", "eta", "*", "w", "*", 
+       RowBox[{"(", 
+        RowBox[{"t", "-", "to"}], ")"}]}], ")"}]}], "*", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"E", "^", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "I"}], "*", "w", "*", 
+          RowBox[{"(", 
+           RowBox[{"t", "-", "to"}], ")"}]}], ")"}]}], "-", "1"}], ")"}], "^",
+      "n"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"z", "[", "t", 
+  "]"}], "\[IndentingNewLine]", "\"\<FUNKCJE FOURIERA\>\"", "\
+\[IndentingNewLine]", "\"\<\>\"", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Ref", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"tk", "-", "to"}], ")"}]}], "*", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}], "^", "k"}], "*", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"n", ",", "k"}], "]"}], "*", 
+    RowBox[{"Cos", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"n", "-", "k", "+", "eta"}], ")"}], "*", "w", "*", 
+      RowBox[{"(", 
+       RowBox[{"t", "-", "to"}], ")"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Imf", "[", "t_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"1", "/", 
+     RowBox[{"(", 
+      RowBox[{"tk", "-", "to"}], ")"}]}], "*", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"-", "1"}], ")"}], "^", "k"}], "*", 
+    RowBox[{"Binomial", "[", 
+     RowBox[{"n", ",", "k"}], "]"}], "*", 
+    RowBox[{"Sin", "[", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"(", 
+        RowBox[{"n", "-", "k", "+", "eta"}], ")"}]}], "*", "w", "*", 
+      RowBox[{"(", 
+       RowBox[{"t", "-", "to"}], ")"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Rez", "[", "t_", "]"}], ":=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"Ref", "[", "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Imz", "[", "t_", "]"}], ":=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"Imf", "[", "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Rez", "[", "t", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Imz", "[", "t", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", "\"\<WYKRES - \
+CZ\:0118\:015a\[CapitalCAcute] RZECZYWISTA\>\"", "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Rez", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "to", ",", "tk"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\"\<MIEJSCA ZEROWE\>\"", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Rez", "[", "t", "]"}], "\[Equal]", "0"}], ",", "t"}], 
+  "]"}], "\[IndentingNewLine]", "\"\<WYKRES - CZ\:0118\:015a\[CapitalCAcute] \
+UROJONA\>\"", "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"Imz", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "to", ",", "tk"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\"\<MIEJSCA ZEROWE\>\"", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Imz", "[", "t", "]"}], "\[Equal]", "0"}], ",", "t"}], 
+  "]"}], "\[IndentingNewLine]", "\"\<I POCHODNA\>\"", "\[IndentingNewLine]", \
+"\"\<\>\"", "\[IndentingNewLine]", "\"\<I POCHODNA - CZ\:0118\:015a\
+\[CapitalCAcute] RZECZYWISTA\>\"", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Rez", "'"}], "[", "t", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Rez", "'"}], "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "to", ",", "tk"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\"\<MIEJSCA ZEROWE\>\"", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Rez", "'"}], "[", "t", "]"}], "\[Equal]", "0"}], ",", "t"}], 
+  "]"}], "\[IndentingNewLine]", "\"\<I POCHODNA - CZ\:0118\:015a\
+\[CapitalCAcute] UROJONA\>\"", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Imz", "'"}], "[", "t", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Imz", "'"}], "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "to", ",", "tk"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\"\<MIEJSCA ZEROWE\>\"", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Imz", "'"}], "[", "t", "]"}], "\[Equal]", "0"}], ",", "t"}], 
+  "]"}], "\[IndentingNewLine]", "\"\<\>\"", "\[IndentingNewLine]", "\"\<II \
+POCHODNA\>\"", "\[IndentingNewLine]", "\"\<\>\"", "\[IndentingNewLine]", \
+"\"\<II POCHODNA - CZ\:0118\:015a\[CapitalCAcute] RZECZYWISTA\>\"", "\
+\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Rez", "''"}], "[", "t", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Rez", "''"}], "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "to", ",", "tk"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\"\<MIEJSCA ZEROWE\>\"", ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Rez", "''"}], "[", "t", "]"}], "\[Equal]", "0"}], ",", "t"}], 
+  "]"}], "\[IndentingNewLine]", "\"\<II POCHODNA - CZ\:0118\:015a\
+\[CapitalCAcute] UROJONA\>\"", "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Imz", "''"}], "[", "t", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Imz", "''"}], "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "to", ",", "tk"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"\"\<MIEJSCA ZEROWE\>\"", ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Solve", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"Imz", "''"}], "[", "t", "]"}], "\[Equal]", "0"}], ",", "t"}], 
+   "]"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]",
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6232516074208455`*^9, 3.623251737975216*^9}, {
+   3.6232517926155634`*^9, 3.6232518116256213`*^9}, {3.623251893834804*^9, 
+   3.6232519308489213`*^9}, {3.6232519762575183`*^9, 
+   3.6232520294187155`*^9}, {3.62325214391302*^9, 3.623252146623024*^9}, {
+   3.623252206244523*^9, 3.623252382752164*^9}, {3.623252424334147*^9, 
+   3.623252426976152*^9}, {3.6232532374259963`*^9, 3.6232532606702185`*^9}, {
+   3.623253295046383*^9, 3.6232533197334986`*^9}, {3.623253517542514*^9, 
+   3.6232535451186028`*^9}, {3.6232535891187553`*^9, 
+   3.6232538644060206`*^9}, {3.6232538983401475`*^9, 
+   3.6232539438142867`*^9}, {3.623253980220789*^9, 3.6232540263290453`*^9}, {
+   3.6232540607972107`*^9, 3.623254134015607*^9}, {3.6232547506325455`*^9, 
+   3.6232547593325744`*^9}, {3.6232547998486757`*^9, 
+   3.6232549255713406`*^9}, {3.623255009316992*^9, 3.623255125371828*^9}, {
+   3.6232554160446353`*^9, 3.623255502206939*^9}, {3.6232555845550785`*^9, 
+   3.6232555962451024`*^9}, {3.623255669331253*^9, 3.6232557524856596`*^9}, {
+   3.6232557940297723`*^9, 3.6232558226358232`*^9}, {3.6232558541559305`*^9, 
+   3.623255860811946*^9}, 3.623255904688111*^9, {3.6232560106543703`*^9, 
+   3.6232560121443725`*^9}, {3.6232560667367506`*^9, 3.623256142224959*^9}, {
+   3.6232562687293525`*^9, 3.623256269939354*^9}, {3.6232563357957716`*^9, 
+   3.6232564924814806`*^9}, {3.623256576426993*^9, 3.623256608857278*^9}, 
+   3.623257747430458*^9, 3.623829235101465*^9, {3.6238514752625217`*^9, 
+   3.6238514754497223`*^9}, {3.6238515064157763`*^9, 3.623851506540577*^9}, {
+   3.6238515509538755`*^9, 3.623851572013912*^9}, {3.623851861909218*^9, 
+   3.623851865060423*^9}, {3.623851907461297*^9, 3.62385194917577*^9}, {
+   3.623851979658223*^9, 3.623851979783023*^9}, {3.62385201795629*^9, 
+   3.62385201814349*^9}, {3.623852070731182*^9, 3.6238520717295837`*^9}, {
+   3.623852120588869*^9, 3.623852153224126*^9}, {3.623852221536645*^9, 
+   3.6238522851223555`*^9}, {3.623852343263657*^9, 3.623852451215845*^9}, {
+   3.6238525103087482`*^9, 3.623852535409192*^9}, {3.623854640617263*^9, 
+   3.6238546438932686`*^9}, {3.6238550527788095`*^9, 
+   3.6238550661675754`*^9}, {3.6267148772833223`*^9, 3.626714886578854*^9}, {
+   3.627065070549549*^9, 3.6270650905279837`*^9}, {3.6270651836009364`*^9, 
+   3.6270652078729334`*^9}, {3.6271330990715985`*^9, 3.627133132420506*^9}, {
+   3.6274619984057713`*^9, 3.6274619984993715`*^9}, {3.6275409438204865`*^9, 
+   3.6275409770383863`*^9}, {3.7213029720518866`*^9, 3.72130299692702*^9}}]
+},
+WindowSize->{1358, 652},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+PrintingCopies->1,
+PrintingPageRange->{Automatic, Automatic},
+Magnification->1.100000023841858,
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 9667, 243, 1313, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

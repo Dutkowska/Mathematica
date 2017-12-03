@@ -1,0 +1,18 @@
+function[c,d]=przedzial(f,a,b,h,n)
+		%funkcja pobiera krañce przedzia³u [a,b], wartoœæ h>1
+		%oraz narzuca d³ugoœæ dzia³ania poni¿szej pêtli:
+for i=1:n
+	if f(a)*f(b) < 0 
+		%wraz ze spe³nieniem warunku przedzia³u izolacji pierwiastka 
+        %mo¿liwe staje siê zdefiniowanie danych wyjœciowych: 
+		c = a; 
+		d = b; 
+        %puki zaœ warunek jest niespe³niony: 
+	elseif abs(f(a)) < abs(f(b))    
+		%abs(f(a)) = |f(a)| 
+		a=a+h(a-b);
+	else
+		b=b+h(b-a);
+	end 
+end
+%[c,d]=przedzial(inline('x^2'),1,2,2,9)

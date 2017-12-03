@@ -1,0 +1,18 @@
+function[x1,i] = newton(x, f, pf, d, M)
+if f(x)==0
+    x1=x;
+end
+if f(x)~=0
+    x1=x-(f(x)/pf(x));
+    for i=1:1:M
+        if abs(x1-x)>=d && pf(x)~=0
+            x=x1;
+            x1=x-(f(x)/pf(x));
+        else
+            break;
+        end
+        if i==M && abs(x1-x)>d
+            break;
+        end
+    end
+end
